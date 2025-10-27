@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_large"
+        android:gravity="center">
+
+        <!-- Header Section with Group Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="@dimen/padding_medium"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:elevation="@dimen/elevation_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/group_title"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/margin_small"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/member_1"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/member_2"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/member_3"
+                android:textSize="@dimen/text_size_normal"
+                android:textColor="@color/text_secondary"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Logo/Icon Section -->
+        <ImageView
+            android:layout_width="@dimen/logo_size"
+            android:layout_height="@dimen/logo_size"
+            android:src="@drawable/ic_yacht"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:contentDescription="@string/app_name"/>
+
+        <!-- Project Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/project_title"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/margin_xlarge"/>
+
+        <!-- Login Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="@dimen/padding_large"
+            android:elevation="@dimen/elevation_card">
+
+            <!-- Login Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_title"
+                android:textSize="@dimen/text_size_xlarge"
+                android:textStyle="bold"
+                android:textColor="@color/primary"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/margin_large"/>
+
+            <!-- Username Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_medium"
+                app:startIconDrawable="@drawable/ic_person"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/accent"
+                app:hintTextColor="@color/accent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/username_hint"
+                    android:inputType="text"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/text_primary"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_large"
+                app:startIconDrawable="@drawable/ic_lock"
+                app:endIconMode="password_toggle"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/accent"
+                app:hintTextColor="@color/accent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/text_primary"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Login Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:text="@string/btn_login"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/accent"
+                app:cornerRadius="@dimen/corner_radius"
+                app:elevation="@dimen/elevation_button"/>
+        </LinearLayout>
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:visibility="gone"
+            android:indeterminateTint="@color/white"/>
+
+    </LinearLayout>
+</ScrollView>
