@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary Colors (Dark Theme) -->
-    <color name="primary">#64B5F6</color>
-    <color name="primary_dark">#0A1929</color>
-    <color name="accent">#90CAF9</color>
-    <color name="accent_light">#BBDEFB</color>
+    <color name="primary">#66BCF2</color>
+    <color name="primary_dark">#2D5F73</color>
+    <color name="accent">#A0D3F2</color>
+    <color name="accent_light">#D5E7F2</color>
 
     <!-- Background Colors (Dark Theme) -->
     <color name="background">#121212</color>
@@ -12,8 +12,8 @@
 
     <!-- Text Colors (Dark Theme) -->
     <color name="text_primary">#E0E0E0</color>
-    <color name="text_secondary">#B0B0B0</color>
-    <color name="text_hint">#757575</color>
+    <color name="text_secondary">#A0D3F2</color>
+    <color name="text_hint">#50ABBF</color>
 
     <!-- Status Colors -->
     <color name="success">#4CAF50</color>
@@ -25,8 +25,8 @@
     <color name="black">#000000</color>
 
     <!-- Nautical Colors (Adapted for dark theme) -->
-    <color name="ocean_blue">#42A5F5</color>
-    <color name="sea_green">#26A69A</color>
-    <color name="sand">#A1887F</color>
-    <color name="wave">#64B5F6</color>
+    <color name="ocean_blue">#66BCF2</color>
+    <color name="sea_green">#50ABBF</color>
+    <color name="sand">#A0D3F2</color>
+    <color name="wave">#A0D3F2</color>
 </resources>
