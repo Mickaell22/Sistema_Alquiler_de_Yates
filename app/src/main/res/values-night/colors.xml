@@ -9,6 +9,12 @@
     <!-- Background Colors (Dark Theme) -->
     <color name="background">#121212</color>
     <color name="surface">#1E1E1E</color>
+    <color name="surface_variant">#2C2C2C</color>
+
+    <!-- On Colors (Dark Theme) -->
+    <color name="on_primary">#121212</color>
+    <color name="on_surface">#E0E0E0</color>
+    <color name="on_background">#E0E0E0</color>
 
     <!-- Text Colors (Dark Theme) -->
     <color name="text_primary">#E0E0E0</color>

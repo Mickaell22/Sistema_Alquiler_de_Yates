@@ -6,7 +6,7 @@
     <string name="group_title">Grupo #7</string>
     <string name="member_1">Moran Vera Mickaell</string>
     <string name="member_2">Salazar Mejia Marco Antonio</string>
-    <string name="member_3">Leon Vera Bryan Jhoel</string>
+    <string name="member_3">Leon Vera Bryan Jhoel</string>2
     <string name="login_title">Iniciar Sesion</string>
     <string name="username_hint">Usuario</string>
     <string name="password_hint">Contrasena</string>
@@ -35,4 +35,12 @@
     <string name="dark_mode">Modo Oscuro</string>
     <string name="enable_dark_mode">Activar modo oscuro</string>
     <string name="disable_dark_mode">Desactivar modo oscuro</string>
+
+    <!-- About -->
+    <string name="about">Acerca de</string>
+    <string name="about_title">Acerca de la Aplicacion</string>
+    <string name="about_description">Sistema de Gestion para Alquiler de Yates Turisticos desarrollado por el Grupo #7</string>
+    <string name="team_members_title">Integrantes del Equipo</string>
+    <string name="btn_close">Cerrar</string>
+    <string name="course_info">Curso: Desarrollo de Aplicaciones Moviles\nUniversidad: Universidad de Guayaquil</string>
 </resources>

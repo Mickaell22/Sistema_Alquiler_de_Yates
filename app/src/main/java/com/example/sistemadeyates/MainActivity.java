@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.sistemadeyates.controllers.AuthController;
+import com.example.sistemadeyates.views.AboutActivity;
 import com.example.sistemadeyates.views.LoginActivity;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
@@ -129,8 +130,16 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_settings) {
             showSettingsDialog();
             return true;
+        } else if (item.getItemId() == R.id.action_about) {
+            openAboutActivity();
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openAboutActivity() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
     }
 
     private void showSettingsDialog() {
