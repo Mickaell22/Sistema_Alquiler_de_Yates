@@ -14,6 +14,8 @@ public class FirestoreManager {
     // Collection names
     public static final String COLLECTION_USERS = "users";
     public static final String COLLECTION_ACTIVITY_LOGS = "activity_logs";
+    public static final String COLLECTION_CLIENTES = "clientes";
+    public static final String COLLECTION_YATES = "yates";
     public static final String COLLECTION_RESERVAS = "reservas";
 
     private FirestoreManager() {
@@ -49,6 +51,20 @@ public class FirestoreManager {
      */
     public CollectionReference getActivityLogsCollection() {
         return db.collection(COLLECTION_ACTIVITY_LOGS);
+    }
+
+    /**
+     * Get reference to clientes collection
+     */
+    public CollectionReference getClientesCollection() {
+        return db.collection(COLLECTION_CLIENTES);
+    }
+
+    /**
+     * Get reference to yates collection
+     */
+    public CollectionReference getYatesCollection() {
+        return db.collection(COLLECTION_YATES);
     }
 
     /**

@@ -45,6 +45,11 @@
             android:name=".views.UsuariosActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" /> <!-- Reservas Activity - Gestion de reservas -->
+        <activity
+            android:name=".views.ReservasActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
     </application>
 
