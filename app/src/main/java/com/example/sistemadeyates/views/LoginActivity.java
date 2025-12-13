@@ -69,10 +69,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initializeViews() {
-        etUsername = findViewById(R.id.etClientName);
+        etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBarUsers);
     }
 
     private void initializeControllers() {

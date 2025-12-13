@@ -13,7 +13,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarClients"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/primary"
@@ -39,7 +39,7 @@
             app:startIconDrawable="@android:drawable/ic_menu_search">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etSearch"
+                android:id="@+id/etSearchClients"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Buscar cliente..."
@@ -48,7 +48,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Lista de usuarios con RecyclerView -->
+        <!-- Lista de clientes con RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewClientes"
             android:layout_width="match_parent"
@@ -56,11 +56,11 @@
             android:layout_weight="1"
             android:clipToPadding="false"
             android:paddingHorizontal="8dp"
-            tools:listitem="@layout/item_cliente" />
+            tools:listitem="@layout/item_client" />
 
         <!-- Empty state -->
         <LinearLayout
-            android:id="@+id/emptyState"
+            android:id="@+id/emptyStateClientes"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="No hay usuarios"
+                android:text="No hay clientes"
                 android:textColor="@color/on_surface"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:alpha="0.7"
-                android:text="Agrega el primer usuario presionando el botón +"
+                android:text="Agrega el primer cliente presionando el botón +"
                 android:textAlignment="center"
                 android:textColor="@color/on_surface"
                 android:textSize="14sp" />
@@ -99,7 +99,7 @@
 
         <!-- Loading -->
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/progressBarClients"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -107,9 +107,9 @@
 
     </LinearLayout>
 
-    <!-- Floating Action Button para agregar usuario -->
+    <!-- Floating Action Button para agregar cliente -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddUser"
+        android:id="@+id/fabAddCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

@@ -14,9 +14,9 @@
         android:orientation="horizontal"
         android:padding="16dp">
 
-        <!-- Icono del usuario -->
+        <!-- Icono del cliente -->
         <ImageView
-            android:id="@+id/ivUserIcon"
+            android:id="@+id/ivClienteIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/ic_person"
@@ -24,7 +24,7 @@
             android:background="@drawable/bg_card"
             app:tint="@color/primary" />
 
-        <!-- Información del usuario -->
+        <!-- Información del cliente -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvUsername"
+                android:id="@+id/tvClienteNombres"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombres"
@@ -42,7 +42,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvUsername3"
+                android:id="@+id/tvClienteApellidos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Apellidos"
@@ -51,17 +51,17 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvEmail2"
+                android:id="@+id/tvClienteCedula"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:alpha="0.7"
-                android:text="Cedula"
+                android:text="Cédula"
                 android:textColor="@color/on_surface"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/tvEmail"
+                android:id="@+id/tvClienteEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -76,22 +76,22 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="4dp">
 
-                <!-- Badge de Rol -->
+                <!-- Badge de Tipo de Cliente -->
                 <TextView
-                    android:id="@+id/tvRol"
+                    android:id="@+id/tvTipoCliente"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_button"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="4dp"
-                    android:text="INFO"
+                    android:text="VIP"
                     android:textColor="@color/on_primary"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <!-- Badge de Estado -->
                 <TextView
-                    android:id="@+id/tvEstado"
+                    android:id="@+id/tvClienteEstado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Activo"
@@ -108,7 +108,7 @@
 
         <!-- Botón de menú (3 puntos) -->
         <ImageView
-            android:id="@+id/btnMenu"
+            android:id="@+id/btnMenuCliente"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"

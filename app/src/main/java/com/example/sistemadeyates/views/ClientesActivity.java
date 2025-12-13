@@ -22,10 +22,10 @@ public class ClientesActivity extends AppCompatActivity {
     private MaterialToolbar toolbar;
 
     private void initializeViews(){
-        recyclerView = findViewById(R.id.recyclerViewClientes);
+        recyclerView = findViewById(R.id.recyclerView);
         fabAdd = findViewById(R.id.fabAddUser);
         etSearch = findViewById(R.id.etSearch);
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBarUsers);
         emptyState = findViewById(R.id.emptyState);
         toolbar = findViewById(R.id.toolbar);
     }

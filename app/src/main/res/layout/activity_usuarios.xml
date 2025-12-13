@@ -50,7 +50,7 @@
 
         <!-- Lista de usuarios con RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewClientes"
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -99,7 +99,7 @@
 
         <!-- Loading -->
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/progressBarUsers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
