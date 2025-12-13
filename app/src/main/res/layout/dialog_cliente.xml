@@ -12,15 +12,16 @@
         android:padding="24dp">
 
         <!-- Título -->
+
         <TextView
             android:id="@+id/tvDialogTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nuevo Usuario"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            android:text="Nuevo Cliente"
             android:textColor="@color/primary"
-            android:layout_marginBottom="24dp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <!-- Campo: Nombre de usuario -->
         <com.google.android.material.textfield.TextInputLayout
@@ -36,13 +37,64 @@
                 android:id="@+id/etClientName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre de usuario"
+                android:hint="Nombres del cliente"
                 android:inputType="text"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo: Email -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilClientSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:helperText="Mínimo 3 caracteres"
+            app:startIconDrawable="@drawable/ic_person">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etClientSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellidos del cliente" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilIdentityCard"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:endIconMode="none"
+            app:helperText="10 caracteres"
+            app:startIconDrawable="?android:attr/fingerprintAuthDrawable">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cedula"
+                android:inputType="text"
+                android:maxLength="10"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:helperText="10 caracteres"
+            app:startIconDrawable="@android:drawable/stat_sys_phone_call">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Numero de telefono" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilEmail"
             android:layout_width="match_parent"
@@ -62,53 +114,26 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo: Contraseña -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilIdentityCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            app:startIconDrawable="@drawable/ic_lock"
-            app:endIconMode="password_toggle"
-            app:helperText="Mínimo 8 caracteres">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Contraseña"
-                android:inputType="textPassword"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo: Rol (Dropdown) -->
+
+        <!-- Switch: Usuario Activo -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilRol"
+            android:id="@+id/tilLicenseNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:startIconDrawable="@drawable/ic_settings">
+            app:helperText="Hasta 25 caracteres"
+            app:startIconDrawable="@drawable/ic_yacht">
 
-            <AutoCompleteTextView
-                android:id="@+id/actvRol"
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Rol"
-                android:inputType="none"
+                android:hint="Numero de licencia nautica"
+                android:inputType="text|textCapCharacters"
+                android:maxLength="25"
                 android:maxLines="1" />
-
         </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Switch: Usuario Activo -->
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/switchActivo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Usuario Activo"
-            android:checked="true"
-            android:layout_marginBottom="24dp" />
 
         <!-- Botones -->
         <LinearLayout

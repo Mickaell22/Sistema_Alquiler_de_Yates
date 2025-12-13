@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -43,7 +42,6 @@ public class UsuariosActivity extends AppCompatActivity implements UsuarioAdapte
     private ProgressBar progressBar;
     private View emptyState;
     private MaterialToolbar toolbar;
-
     private UserRepository userRepository;
 
     @Override
@@ -61,8 +59,8 @@ public class UsuariosActivity extends AppCompatActivity implements UsuarioAdapte
     }
 
     private void initializeViews() {
-        recyclerView = findViewById(R.id.recyclerViewUsuarios);
-        fabAdd = findViewById(R.id.fabAddUsuario);
+        recyclerView = findViewById(R.id.recyclerViewClientes);
+        fabAdd = findViewById(R.id.fabAddUser);
         etSearch = findViewById(R.id.etSearch);
         progressBar = findViewById(R.id.progressBar);
         emptyState = findViewById(R.id.emptyState);
@@ -163,12 +161,12 @@ public class UsuariosActivity extends AppCompatActivity implements UsuarioAdapte
     private void showAddUsuarioDialog() {
         View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_usuario, null);
 
-        TextInputLayout tilUsername = dialogView.findViewById(R.id.tilUsername);
+        TextInputLayout tilUsername = dialogView.findViewById(R.id.tilClientName);
         TextInputLayout tilEmail = dialogView.findViewById(R.id.tilEmail);
-        TextInputLayout tilPassword = dialogView.findViewById(R.id.tilPassword);
+        TextInputLayout tilPassword = dialogView.findViewById(R.id.tilIdentityCard);
         TextInputLayout tilRol = dialogView.findViewById(R.id.tilRol);
 
-        TextInputEditText etUsername = dialogView.findViewById(R.id.etUsername);
+        TextInputEditText etUsername = dialogView.findViewById(R.id.etClientName);
         TextInputEditText etEmail = dialogView.findViewById(R.id.etEmail);
         TextInputEditText etPassword = dialogView.findViewById(R.id.etPassword);
         AutoCompleteTextView actvRol = dialogView.findViewById(R.id.actvRol);
@@ -254,12 +252,12 @@ public class UsuariosActivity extends AppCompatActivity implements UsuarioAdapte
         View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_usuario, null);
 
         TextView tvTitle = dialogView.findViewById(R.id.tvDialogTitle);
-        TextInputLayout tilUsername = dialogView.findViewById(R.id.tilUsername);
+        TextInputLayout tilUsername = dialogView.findViewById(R.id.tilClientName);
         TextInputLayout tilEmail = dialogView.findViewById(R.id.tilEmail);
-        TextInputLayout tilPassword = dialogView.findViewById(R.id.tilPassword);
+        TextInputLayout tilPassword = dialogView.findViewById(R.id.tilIdentityCard);
         TextInputLayout tilRol = dialogView.findViewById(R.id.tilRol);
 
-        TextInputEditText etUsername = dialogView.findViewById(R.id.etUsername);
+        TextInputEditText etUsername = dialogView.findViewById(R.id.etClientName);
         TextInputEditText etEmail = dialogView.findViewById(R.id.etEmail);
         TextInputEditText etPassword = dialogView.findViewById(R.id.etPassword);
         AutoCompleteTextView actvRol = dialogView.findViewById(R.id.actvRol);

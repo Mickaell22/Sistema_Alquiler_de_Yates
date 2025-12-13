@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initializeViews() {
-        etUsername = findViewById(R.id.etUsername);
+        etUsername = findViewById(R.id.etClientName);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         progressBar = findViewById(R.id.progressBar);

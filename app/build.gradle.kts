@@ -48,6 +48,7 @@ dependencies {
 
     // Gson
     implementation(libs.gson)
+    implementation(libs.coordinatorlayout)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
