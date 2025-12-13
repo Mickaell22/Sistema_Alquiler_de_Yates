@@ -1,39 +1,37 @@
 package com.example.sistemadeyates.models;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-import androidx.room.ColumnInfo;
-import androidx.room.Ignore;
+import com.google.firebase.firestore.DocumentId;
+import com.google.firebase.firestore.PropertyName;
 
-@Entity(tableName = "users")
 public class User {
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @DocumentId
+    private String id;
 
-    @ColumnInfo(name = "username")
+    @PropertyName("username")
     private String username;
 
-    @ColumnInfo(name = "email")
+    @PropertyName("email")
     private String email;
 
-    @ColumnInfo(name = "password")
+    @PropertyName("password")
     private String password;
 
-    @ColumnInfo(name = "rol")
+    @PropertyName("rol")
     private String rol;
 
-    @ColumnInfo(name = "activo")
+    @PropertyName("activo")
     private boolean activo;
 
-    @ColumnInfo(name = "fecha_creacion")
+    @PropertyName("fecha_creacion")
     private long fechaCreacion;
 
+    // No-argument constructor required for Firestore
     public User() {
         this.activo = true;
         this.fechaCreacion = System.currentTimeMillis();
     }
 
-    @Ignore
+    // Constructor for creating new users
     public User(String username, String email, String password, String rol) {
         this.username = username;
         this.email = email;
@@ -43,11 +41,11 @@ public class User {
         this.fechaCreacion = System.currentTimeMillis();
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

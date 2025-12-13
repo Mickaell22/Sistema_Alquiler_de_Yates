@@ -1,52 +1,50 @@
 package com.example.sistemadeyates.models;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-import androidx.room.ColumnInfo;
-import androidx.room.Ignore;
+import com.google.firebase.firestore.DocumentId;
+import com.google.firebase.firestore.PropertyName;
 
-@Entity(tableName = "activity_logs")
 public class ActivityLog {
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @DocumentId
+    private String id;
 
-    @ColumnInfo(name = "user_id")
-    private int userId;
+    @PropertyName("user_id")
+    private String userId;
 
-    @ColumnInfo(name = "accion")
+    @PropertyName("accion")
     private String accion;
 
-    @ColumnInfo(name = "timestamp")
+    @PropertyName("timestamp")
     private long timestamp;
 
-    @ColumnInfo(name = "detalles")
+    @PropertyName("detalles")
     private String detalles;
 
+    // No-argument constructor required for Firestore
     public ActivityLog() {
         this.timestamp = System.currentTimeMillis();
     }
 
-    @Ignore
-    public ActivityLog(int userId, String accion, String detalles) {
+    // Constructor for creating new logs
+    public ActivityLog(String userId, String accion, String detalles) {
         this.userId = userId;
         this.accion = accion;
         this.detalles = detalles;
         this.timestamp = System.currentTimeMillis();
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

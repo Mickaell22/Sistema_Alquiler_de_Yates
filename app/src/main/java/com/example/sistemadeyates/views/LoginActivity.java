@@ -46,9 +46,15 @@ public class LoginActivity extends AppCompatActivity {
         initializeControllers();
         setupListeners();
 
+        // Mostrar loading mientras se inicializan usuarios
+        showLoading(true);
+        btnLogin.setEnabled(false);
+
         databaseHelper.initializeDefaultUsers(() -> {
             runOnUiThread(() -> {
-                Toast.makeText(LoginActivity.this, "Sistema iniciado correctamente", Toast.LENGTH_SHORT).show();
+                showLoading(false);
+                btnLogin.setEnabled(true);
+                Toast.makeText(LoginActivity.this, "Sistema iniciado. Use: admin/admin123", Toast.LENGTH_LONG).show();
             });
         });
     }
@@ -105,7 +111,9 @@ public class LoginActivity extends AppCompatActivity {
                     runOnUiThread(() -> {
                         showLoading(false);
                         btnLogin.setEnabled(true);
-                        Toast.makeText(LoginActivity.this, R.string.access_denied, Toast.LENGTH_LONG).show();
+                        // Mostrar error específico
+                        String errorMsg = error != null ? error : getString(R.string.access_denied);
+                        Toast.makeText(LoginActivity.this, errorMsg, Toast.LENGTH_LONG).show();
                     });
                 }
             });

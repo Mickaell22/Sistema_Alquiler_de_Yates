@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "754189496940",
+    "project_id": "sistema-de-yates",
+    "storage_bucket": "sistema-de-yates.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754189496940:android:808ff8d615f0646e69de49",
+        "android_client_info": {
+          "package_name": "com.example.sistemadeyates"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVgoCrYmMFBIeUZKLnR8EbVzhfDZ069h8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

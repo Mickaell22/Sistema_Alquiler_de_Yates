@@ -60,8 +60,8 @@ public class AuthController {
     }
 
     public void logout() {
-        int userId = preferences.getInt(Constants.PREF_USER_ID, 0);
-        if (userId > 0) {
+        String userId = preferences.getString(Constants.PREF_USER_ID, null);
+        if (userId != null && !userId.isEmpty()) {
             logActivity(userId, Constants.ACTION_LOGOUT, "Usuario cerro sesion");
         }
         clearSession();
@@ -88,7 +88,7 @@ public class AuthController {
         }
 
         User user = new User();
-        user.setId(preferences.getInt(Constants.PREF_USER_ID, 0));
+        user.setId(preferences.getString(Constants.PREF_USER_ID, ""));
         user.setUsername(preferences.getString(Constants.PREF_USERNAME, ""));
         user.setRol(preferences.getString(Constants.PREF_USER_ROL, ""));
         return user;
@@ -96,7 +96,7 @@ public class AuthController {
 
     private void saveSession(User user) {
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt(Constants.PREF_USER_ID, user.getId());
+        editor.putString(Constants.PREF_USER_ID, user.getId());
         editor.putString(Constants.PREF_USERNAME, user.getUsername());
         editor.putString(Constants.PREF_USER_ROL, user.getRol());
         editor.putBoolean(Constants.PREF_IS_LOGGED_IN, true);
@@ -110,7 +110,7 @@ public class AuthController {
         editor.apply();
     }
 
-    private void logActivity(int userId, String action, String details) {
+    private void logActivity(String userId, String action, String details) {
         ActivityLog log = new ActivityLog(userId, action, details);
         logRepository.insertLog(log, null);
     }
