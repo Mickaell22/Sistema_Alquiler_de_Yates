@@ -55,10 +55,13 @@ public class LoginActivity extends AppCompatActivity {
             databaseHelper.initializeDefaultClientes(() -> {
                 // After clientes are initialized, initialize yates
                 databaseHelper.initializeDefaultYates(() -> {
-                    runOnUiThread(() -> {
-                        showLoading(false);
-                        btnLogin.setEnabled(true);
-                        Toast.makeText(LoginActivity.this, "Sistema iniciado. Use: admin/admin123", Toast.LENGTH_LONG).show();
+                    // After yates are initialized, initialize reservas
+                    databaseHelper.initializeDefaultReservas(() -> {
+                        runOnUiThread(() -> {
+                            showLoading(false);
+                            btnLogin.setEnabled(true);
+                            Toast.makeText(LoginActivity.this, "Sistema iniciado. Use: admin/admin123", Toast.LENGTH_LONG).show();
+                        });
                     });
                 });
             });
