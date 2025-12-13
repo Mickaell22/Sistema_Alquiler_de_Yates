@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import com.example.sistemadeyates.controllers.AuthController;
 import com.example.sistemadeyates.views.AboutActivity;
 import com.example.sistemadeyates.views.LoginActivity;
+import com.example.sistemadeyates.views.UsuariosActivity;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
@@ -91,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
         btnLogout.setOnClickListener(v -> logout());
 
         cardUsuarios.setOnClickListener(v -> {
-            Toast.makeText(this, "Modulo de Usuarios - Proximamente", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, UsuariosActivity.class);
+            startActivity(intent);
         });
 
         cardClientes.setOnClickListener(v -> {
