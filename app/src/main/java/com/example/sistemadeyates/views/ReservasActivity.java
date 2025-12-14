@@ -184,10 +184,18 @@ public class ReservasActivity extends AppCompatActivity implements ReservaAdapte
     }
 
     private void loadReservas() {
+        android.util.Log.d("ReservasActivity", "loadReservas() called");
         reservaRepository.getAllReservas(new ReservaRepository.ReservasCallback() {
             @Override
             public void onSuccess(List<Reserva> reservas) {
                 runOnUiThread(() -> {
+                    android.util.Log.d("ReservasActivity", "Reservas cargadas: " + reservas.size() + " reservas");
+                    for (Reserva r : reservas) {
+                        android.util.Log.d("ReservasActivity", "  Reserva ID=" + r.getId() +
+                                ", clienteId=" + r.getClienteId() +
+                                ", yateId=" + r.getYateId() +
+                                ", estado=" + r.getEstado());
+                    }
                     showLoading(false);
                     adapter.setReservas(reservas);
                     updateEmptyState(reservas.isEmpty());
@@ -197,6 +205,7 @@ public class ReservasActivity extends AppCompatActivity implements ReservaAdapte
             @Override
             public void onError(String error) {
                 runOnUiThread(() -> {
+                    android.util.Log.e("ReservasActivity", "Error al cargar reservas: " + error);
                     showLoading(false);
                     Toast.makeText(ReservasActivity.this, "Error: " + error, Toast.LENGTH_SHORT).show();
                 });
@@ -288,8 +297,16 @@ public class ReservasActivity extends AppCompatActivity implements ReservaAdapte
         // Setup yates dropdown
         List<String> yateNames = new ArrayList<>();
         for (Yate yate : yatesList) {
+            android.util.Log.d("ReservasActivity", "Yate en dropdown: ID=" + yate.getId() +
+                    ", marca=" + yate.getMarca() +
+                    ", modelo=" + yate.getModelo() +
+                    ", anio=" + yate.getAnio() +
+                    ", capacidad=" + yate.getCapacidad() +
+                    ", precioDia=" + yate.getPrecioDia() +
+                    ", displayName=" + yate.getDisplayName());
             yateNames.add(yate.getDisplayName());
         }
+        android.util.Log.d("ReservasActivity", "Total yates en dropdown: " + yateNames.size());
         ArrayAdapter<String> yateAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, yateNames);
         actvYate.setAdapter(yateAdapter);
 
@@ -392,10 +409,17 @@ public class ReservasActivity extends AppCompatActivity implements ReservaAdapte
             // Create reserva
             Reserva newReserva = new Reserva(clienteId, yateId, fechaInicioMillis[0], fechaFinMillis[0], precioTotal, currentUserId);
 
+            android.util.Log.d("ReservasActivity", "Creando reserva: clienteId=" + clienteId +
+                    ", yateId=" + yateId +
+                    ", fechaInicio=" + fechaInicioMillis[0] +
+                    ", fechaFin=" + fechaFinMillis[0] +
+                    ", precioTotal=" + precioTotal);
+
             reservaRepository.insertReserva(newReserva, new ReservaRepository.ReservaCallback() {
                 @Override
                 public void onSuccess(Reserva reserva) {
                     runOnUiThread(() -> {
+                        android.util.Log.d("ReservasActivity", "Reserva creada con exito: ID=" + reserva.getId());
                         Toast.makeText(ReservasActivity.this, "Reserva creada exitosamente", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                         loadReservas();
@@ -405,6 +429,7 @@ public class ReservasActivity extends AppCompatActivity implements ReservaAdapte
                 @Override
                 public void onError(String error) {
                     runOnUiThread(() -> {
+                        android.util.Log.e("ReservasActivity", "Error al crear reserva: " + error);
                         Toast.makeText(ReservasActivity.this, "Error: " + error, Toast.LENGTH_LONG).show();
                     });
                 }
@@ -452,8 +477,16 @@ public class ReservasActivity extends AppCompatActivity implements ReservaAdapte
         // Setup yates dropdown
         List<String> yateNames = new ArrayList<>();
         for (Yate yate : yatesList) {
+            android.util.Log.d("ReservasActivity", "Yate en dropdown: ID=" + yate.getId() +
+                    ", marca=" + yate.getMarca() +
+                    ", modelo=" + yate.getModelo() +
+                    ", anio=" + yate.getAnio() +
+                    ", capacidad=" + yate.getCapacidad() +
+                    ", precioDia=" + yate.getPrecioDia() +
+                    ", displayName=" + yate.getDisplayName());
             yateNames.add(yate.getDisplayName());
         }
+        android.util.Log.d("ReservasActivity", "Total yates en dropdown: " + yateNames.size());
         ArrayAdapter<String> yateAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, yateNames);
         actvYate.setAdapter(yateAdapter);
 

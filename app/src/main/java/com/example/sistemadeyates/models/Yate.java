@@ -136,6 +136,26 @@ public class Yate {
     }
 
     public String getDisplayName() {
-        return marca + " " + modelo + " (" + anio + ")";
+        // Handle incomplete data from Firestore
+        if (marca == null || marca.isEmpty()) {
+            // If marca is null, just use modelo
+            if (modelo != null && !modelo.isEmpty()) {
+                if (anio > 0) {
+                    return modelo + " (" + anio + ")";
+                }
+                return modelo;
+            }
+            return "Yate sin nombre";
+        }
+
+        // Normal case: marca + modelo + anio
+        StringBuilder displayName = new StringBuilder(marca);
+        if (modelo != null && !modelo.isEmpty()) {
+            displayName.append(" ").append(modelo);
+        }
+        if (anio > 0) {
+            displayName.append(" (").append(anio).append(")");
+        }
+        return displayName.toString();
     }
 }

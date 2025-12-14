@@ -109,6 +109,14 @@ public class YateRepository {
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     List<Yate> yates = querySnapshot.toObjects(Yate.class);
+                    Log.d(TAG, "Loaded " + yates.size() + " yates from Firestore");
+                    for (Yate yate : yates) {
+                        Log.d(TAG, "Yate: ID=" + yate.getId() +
+                                ", marca=" + yate.getMarca() +
+                                ", modelo=" + yate.getModelo() +
+                                ", anio=" + yate.getAnio() +
+                                ", displayName=" + yate.getDisplayName());
+                    }
                     callback.onSuccess(yates);
                 })
                 .addOnFailureListener(e -> {

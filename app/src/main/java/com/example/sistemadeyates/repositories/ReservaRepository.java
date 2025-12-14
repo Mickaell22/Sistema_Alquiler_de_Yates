@@ -127,13 +127,28 @@ public class ReservaRepository {
 
     /**
      * Get all reservas
+     * NOTE: orderBy requires a Firestore index. Removed temporarily to allow functionality.
+     * To add ordering back, create a composite index in Firestore Console for:
+     * Collection: reservas, Fields: fecha_creacion (Descending)
      */
     public void getAllReservas(ReservasCallback callback) {
+        Log.d(TAG, "getAllReservas() called");
         reservasCollection
-                .orderBy("fecha_creacion", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     List<Reserva> reservas = querySnapshot.toObjects(Reserva.class);
+                    Log.d(TAG, "getAllReservas - Found " + reservas.size() + " reservas from Firestore");
+                    for (Reserva r : reservas) {
+                        Log.d(TAG, "  Reserva: ID=" + r.getId() +
+                                ", clienteId=" + r.getClienteId() +
+                                ", yateId=" + r.getYateId() +
+                                ", estado=" + r.getEstado() +
+                                ", precioTotal=" + r.getPrecioTotal());
+                    }
+
+                    // Sort by fecha_creacion in memory (since we can't use orderBy without index)
+                    reservas.sort((r1, r2) -> Long.compare(r2.getFechaCreacion(), r1.getFechaCreacion()));
+
                     callback.onSuccess(reservas);
                 })
                 .addOnFailureListener(e -> {
@@ -148,10 +163,11 @@ public class ReservaRepository {
     public void getReservasByCliente(String clienteId, ReservasCallback callback) {
         reservasCollection
                 .whereEqualTo("cliente_id", clienteId)
-                .orderBy("fecha_inicio", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     List<Reserva> reservas = querySnapshot.toObjects(Reserva.class);
+                    // Sort in memory
+                    reservas.sort((r1, r2) -> Long.compare(r2.getFechaInicio(), r1.getFechaInicio()));
                     callback.onSuccess(reservas);
                 })
                 .addOnFailureListener(e -> {
@@ -166,10 +182,11 @@ public class ReservaRepository {
     public void getReservasByYate(String yateId, ReservasCallback callback) {
         reservasCollection
                 .whereEqualTo("yate_id", yateId)
-                .orderBy("fecha_inicio", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     List<Reserva> reservas = querySnapshot.toObjects(Reserva.class);
+                    // Sort in memory
+                    reservas.sort((r1, r2) -> Long.compare(r2.getFechaInicio(), r1.getFechaInicio()));
                     callback.onSuccess(reservas);
                 })
                 .addOnFailureListener(e -> {
@@ -184,10 +201,11 @@ public class ReservaRepository {
     public void getReservasByEstado(String estado, ReservasCallback callback) {
         reservasCollection
                 .whereEqualTo("estado", estado)
-                .orderBy("fecha_inicio", Query.Direction.DESCENDING)
                 .get()
                 .addOnSuccessListener(querySnapshot -> {
                     List<Reserva> reservas = querySnapshot.toObjects(Reserva.class);
+                    // Sort in memory
+                    reservas.sort((r1, r2) -> Long.compare(r2.getFechaInicio(), r1.getFechaInicio()));
                     callback.onSuccess(reservas);
                 })
                 .addOnFailureListener(e -> {
