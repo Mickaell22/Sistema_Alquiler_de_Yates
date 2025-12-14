@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.sistemadeyates.controllers.AuthController;
 import com.example.sistemadeyates.views.AboutActivity;
+import com.example.sistemadeyates.views.ClientesActivity;
 import com.example.sistemadeyates.views.LoginActivity;
 import com.example.sistemadeyates.views.ReservasActivity;
 import com.example.sistemadeyates.views.UsuariosActivity;
@@ -98,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         cardClientes.setOnClickListener(v -> {
-            Toast.makeText(this, "Modulo de Clientes - Proximamente", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ClientesActivity.class);
+            startActivity(intent);
         });
 
         cardYates.setOnClickListener(v -> {
