@@ -18,7 +18,7 @@
             android:id="@+id/ivYateIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_boat"
+            android:src="@drawable/ic_person"
             android:padding="8dp"
             android:background="@drawable/bg_card"
             app:tint="@color/primary" />
