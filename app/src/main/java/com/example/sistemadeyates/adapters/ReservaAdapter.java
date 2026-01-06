@@ -40,7 +40,7 @@ public class ReservaAdapter extends RecyclerView.Adapter<ReservaAdapter.ReservaV
         this.reservasFiltradas = new ArrayList<>();
         this.listener = listener;
         this.dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-        this.currencyFormat = NumberFormat.getCurrencyInstance(new Locale("es", "DO"));
+        this.currencyFormat = NumberFormat.getCurrencyInstance(new Locale("en", "US"));
     }
 
     @NonNull

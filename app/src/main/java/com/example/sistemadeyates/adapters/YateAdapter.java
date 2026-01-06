@@ -33,7 +33,7 @@ public class YateAdapter extends RecyclerView.Adapter<YateAdapter.YateViewHolder
         this.yates = new ArrayList<>();
         this.yatesFiltrados = new ArrayList<>();
         this.listener = listener;
-        this.currencyFormat = NumberFormat.getCurrencyInstance(new Locale("es", "DO"));
+        this.currencyFormat = NumberFormat.getCurrencyInstance(new Locale("en", "US"));
     }
 
     @NonNull

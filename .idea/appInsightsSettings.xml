@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.sistemadeyates" />
+                  <option name="mobileSdkAppId" value="1:754189496940:android:808ff8d615f0646e69de49" />
+                  <option name="projectId" value="sistema-de-yates" />
+                  <option name="projectNumber" value="754189496940" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
